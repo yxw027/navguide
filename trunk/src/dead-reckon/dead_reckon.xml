@@ -1,0 +1,69 @@
+<refentry id="module-dead-reckon">
+  <refmeta>
+    <refentrytitle>dead_reckon</refentrytitle>
+    <manvolnum>1</manvolnum>
+  </refmeta>
+
+  <refnamediv>
+    <refname>dead_reckon</refname>
+    <refpurpose>Computes position in the local coordinate frame from
+      odometry and IMU</refpurpose>
+  </refnamediv>
+
+  <refsynopsisdiv>
+    <cmdsynopsis>
+      <command>dead_reckon</command>
+      <arg>-v</arg>
+      <arg>-c</arg>
+      <arg>-f <replaceable>N</replaceable></arg>
+    </cmdsynopsis>
+
+  </refsynopsisdiv>
+
+  <refsect1>
+    <title>Description</title>
+	<para>
+      The dead-reckon module takes odometry information in the form of
+      an #odometry_update_t LC message and combines it with the information
+      from a #imu_t LC message to perform dead reckoning in a local
+      coordinate system.  It publishes messages of type #pose_state_t.
+    </para>
+  </refsect1>
+
+  <refsect1>
+    <title>Options</title>
+    <variablelist>
+      <varlistentry>
+        <term><option>-v</option></term>
+        <listitem>
+          <para>Be verbose</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-c</option></term>
+        <listitem>
+          <para>Use the first 5 seconds of #imu_t messages to compute a bias offset
+           correction for the IMU.  The IMU must remain perfectly stationary for
+           these 5 seconds for the result to be valid.  The IMU's gyro rates are
+           averaged for this period, and the result is subtracted from future #imu_t
+           messages.</para>
+        </listitem>
+      </varlistentry>
+      <varlistentry>
+        <term><option>-f <replaceable>N</replaceable></option></term>
+        <listitem>
+          <para>Perform integration of yaw (rotation around the
+          estimated gravity vector) directly using the IMU gyro rate around that
+          axis.  Ignore the yaw component of the quaternion received from the
+          IMU, and instead use our integrated yaw.  The quaternion that dead_reckon
+          outputs in #pose_state_t is this "fixed up" version of the IMU's
+          quaternion.  If <replaceable>N</replaceable> is 0, this fixup is never
+          performed.  If <replaceable>N</replaceable> is 1, it is always
+          performed.  If the <option>-f</option> is not specified, the default is
+          to perform fixup for XSens IMUs, but not other IMUs.</para>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </refsect1>
+</refentry>
+

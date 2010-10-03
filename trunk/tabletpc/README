@@ -1,0 +1,35 @@
+Installation Instructions for the tablet PC 770/810
+===================================================
+
+I. Flashing the Nokia 770/810 Linux image
+=========================================
+
+http://maemo.org/community/oldwiki/howto-flashlatestnokiaimagewithlinux/
+
+perl -pi -i.backup -e 's-/proc/bus/usb-/dev/bus/usb\000-;' $FLASHER, where $FLASHER is the location of your flasher linux binary
+
+II. Install applications
+========================
+
+1. Enable the Extras repository in the tablet Application Catalog.
+2. Install openssh-server, openssh-client, rootsh, python2.5-runtime
+
+III. Install the navguide-tablet application
+============================================
+
+1. Copy the vsguidetablet directory to /home/user/ on the tablet PC
+
+2. Copy the pixmaps directory to /usr/share/pixmaps on the tablet PC
+
+3. Copy the .desktop file to /usr/share/applications/hildon on the tablet PC
+
+IV. Getting IP address
+======================
+% sudo gainroot
+% ifconfig
+
+V. Misc
+======================
+
+If the python application returns "Open loadopt file: permission denied", remove the directory ~/.pylauncher and restart the tablet PC.
+

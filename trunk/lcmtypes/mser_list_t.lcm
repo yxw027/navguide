@@ -1,0 +1,8 @@
+package navlcm;
+
+struct mser_list_t
+{
+    byte sensorid;
+    int32_t nel;
+    mser_t el[nel];    
+}

@@ -1,0 +1,9 @@
+package navlcm;
+
+struct dictionary_t
+{
+    int32_t num;
+
+    string keys[num];
+    string vals[num];
+}

@@ -1,0 +1,7 @@
+package navlcm;
+
+struct double_list_t
+{
+    int32_t num;
+    double val[num];
+}

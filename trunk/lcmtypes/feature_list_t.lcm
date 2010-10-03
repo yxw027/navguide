@@ -1,0 +1,14 @@
+package navlcm;
+
+struct feature_list_t
+{
+    int32_t num; // number of features
+    feature_t el[num];
+
+    int64_t utime;
+    byte sensorid;
+    int32_t width;  // image width and height
+    int32_t height; // 
+    int32_t desc_size; // descriptor length
+    int32_t feature_type;
+}

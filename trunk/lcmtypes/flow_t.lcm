@@ -1,0 +1,18 @@
+package navlcm;
+
+struct flow_t
+{
+    int64_t utime1;
+    int64_t utime2;
+
+    int32_t num;
+    double x[num];
+    double y[num];
+    double flowx[num];
+    double flowy[num];
+    byte sensor[num];
+    byte status[num];
+
+    int32_t width;
+    int32_t height;
+}

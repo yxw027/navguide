@@ -1,0 +1,8 @@
+package navlcm;
+
+struct ui_map_edge_t
+{
+    int32_t id1, id2;
+    int32_t motion_type;
+    int32_t reverse;
+}

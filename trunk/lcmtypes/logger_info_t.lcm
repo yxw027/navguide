@@ -1,0 +1,10 @@
+package navlcm;
+
+struct logger_info_t
+{
+    byte logging;
+    string logfilename;
+    double logfilesize_mb;
+    double logfilerate_mbs;
+
+}

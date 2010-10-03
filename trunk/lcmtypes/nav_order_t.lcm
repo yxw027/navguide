@@ -1,0 +1,10 @@
+package navlcm;
+
+struct nav_order_t
+{
+    double angle; 
+    double progress;
+    int32_t node;
+    int32_t code;
+    double error;
+}

@@ -1,0 +1,35 @@
+The nv-guidance process is the core process of navguide. It takes as input a stream of visual features extracted from an arbitrary number of uncalibrated cameras. It outputs two types of information:
+
+* In exploration mode, nv-guidance builds a topological representation of the environment (place graph) and stores it as a binary file (map.bin, by default).
+
+* In navigation mode, nv-guidance takes as additional input the map generated during exploration as well as a start and end location in the place graph, and outputs (1) the localization of the user in the place graph and (2) a body-centric directional cue pointing to the next node in the path.
+
+In addition, nv-guidance can run in batch mode in order to run the loop closure algorithm. This algorithm could run live during exploration, but due to its high CPU and memory requirements, we suggest to run it in batch mode.
+
+The list of command line options is available by typing nv-guidance --help. Below are a few typical command line sequences.
+
+To run nv-guidance in exploration mode:
+
+% nv-guidance -m 0
+
+or
+
+% nv-guidance -m 0 --map-file foo.bin
+
+
+To run nv-guidance in batch mode (loop closure detection):
+
+nv-guidance --map-file foo.bin --loop-closure
+
+Output: new-map.bin  new-map.ps
+
+
+To run nv-guidance in navigation mode:
+
+% nv-guidance -m 1 --map-file bar.bin --node-id 17 --target-id 24
+
+(taking as input the map stored in bar.bin, and assuming that the user is at node 17, provide guidance to node 24).
+
+
+
+

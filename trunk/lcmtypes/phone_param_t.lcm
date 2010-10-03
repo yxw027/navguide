@@ -1,0 +1,6 @@
+package navlcm;
+
+struct phone_param_t {
+    string name;
+    int32_t code;
+}

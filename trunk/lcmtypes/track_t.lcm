@@ -1,0 +1,11 @@
+package navlcm;
+
+struct track_t
+{
+  feature_list_t ft;      // a list of features 
+  double averror;         // average square distance btw features
+  int32_t ttl;            // time to live
+  int64_t uid;            // a unique identifier
+  int64_t time_start;     // timestamp 
+  int64_t time_end;       // 
+}

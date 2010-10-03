@@ -1,0 +1,7 @@
+package navlcm;
+
+struct feature_match_set_t
+{
+    int32_t num;       // number of feature matches
+    feature_match_t el[num];
+}

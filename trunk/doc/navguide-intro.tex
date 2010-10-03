@@ -1,0 +1,66 @@
+\documentclass[letter,11pt]{report}
+%
+%--------------------   start of the 'preamble'
+%
+\usepackage{graphicx,amssymb,amstext,amsmath}
+%
+%%    homebrew commands -- to save typing
+\newcommand\etc{\textsl{etc}}
+\newcommand\eg{\textsl{eg.}\ }
+\newcommand\etal{\textsl{et al.}}
+\newcommand\Quote[1]{\lq\textsl{#1}\rq}
+\newcommand\fr[2]{{\textstyle\frac{#1}{#2}}}
+\newcommand\miktex{\textsl{MikTeX}}
+\newcommand\comp{\textsl{The Companion}}
+\newcommand\nss{\textsl{Not so Short}}
+%
+%---------------------   end of the 'preamble'
+%
+\begin{document}
+%-----------------------------------------------------------
+\title{Navguide: Navigation Guidance using Uncalibrated Cameras}
+\author{Olivier Koch, Seth Teller}
+\maketitle
+%-----------------------------------------------------------
+Navguide is a set of algorithms for vision-based navigation using uncalibrated cameras. Navguide takes as input a live video stream coming from an arbitrary set of cameras, and allows a human, or a robot equipped with a low-level obstacle avoidance capability, to navigate through any environment previously explored.
+
+Navguide builds upon a topological representation of the environment and works in two modes. In the {\it exploration mode}, navguide builds the map as the user moves through the environment. In the {\it navigation mode}, navguide assumes that the user is moving through the previously explored environment, and provides navigation guidance from any place to any other. Navguide is distinct from metrical SLAM (Simultaneous and Mapping) since it does not attempt to build a metrical representation of the environment. However, navguide includes a loop closure component (detecting when the user comes back to a previously seen place during exploration) and updates the map online during exploration.
+
+Navguide requires no intrinsic or extrinsic calibration of the cameras. Instead, it learns the coarse geometric configuration of the cameras during a brief training phase. During the training phase, the user rotates in place in an arbitrary environment. Navguide then learns the statistical distribution of point feature matches across cameras and uses the data to provide rotation guidance during exploration (much like a {\it visual compass}). The training phase is distinct from typical calibration methods in a sense that it does not recover the explicit calibration parameters of the cameras. In particular, the geometric configuration of the cameras with respect to the user's body frame is not recovered. We show that this information is not required to provide safe and robust navigation to a human or a robot.
+\newline
+
+\noindent For more information, see the following references:
+\newline
+
+\noindent Ground Robot Navigation using Uncalibrated Cameras, O. Koch, M. Walter, A. Huang, S. Teller, {\it International Conference on Robotics and Automation (ICRA)}, Anchorage, Alaska, 2010.
+\newline
+
+\noindent Body Relative Navigation using Uncalibrated Cameras, O. Koch, S. Teller, {\it International Conference on Computer Vision (ICCV)}, Kyoto, Japan, 2009.
+
+
+%-----------------------------------------------------------
+%-----------------------------------------------------------
+%\begin{abstract}\centering
+%A couple of sentences on three or four lines to summarise your work.\\ 
+%This is a \LaTeX\ template for undergraduate project reports.\\
+%Its detailed contents evolve to reflect FAQs.
+%\end{abstract}
+%%-----------------------------------------------------------
+%\tableofcontents
+%%-----------------------------------------------------------
+%\include{chap1}
+%\include{chap2}
+%\include{chap3}
+%\include{chap4}
+%%-----------------------------------------------------------
+%\addcontentsline{toc}{chapter}{\numberline{}Bibliography}
+%\include{biblio}
+%%-----------------------------------------------------------
+%\appendix
+%\include{app4}
+%\include{app1}
+%\include{app2}
+%\include{app5}
+%\include{app3}
+%-----------------------------------------------------------
+\end{document}

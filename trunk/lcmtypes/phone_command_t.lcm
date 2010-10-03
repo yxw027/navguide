@@ -1,0 +1,5 @@
+package navlcm;
+
+struct phone_command_t {
+    double theta;
+}

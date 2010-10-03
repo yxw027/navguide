@@ -1,0 +1,28 @@
+package navlcm;
+
+struct imu_t
+{
+    int64_t  utime;
+
+    double linear_accel[3];  // Acceleration in m/s/s along the x-, y-, and
+                             //  z-axes, respectively, in the IMU coordinate
+                             //  frame.
+    double rotation_rate[3]; // Angular velocity in rad/s around the x-, y-,
+                             //  and z-axes, respectively, in the IMU coordinate
+                             //  frame.
+    double q[4];             // Quaternion that transforms from imu coordinates
+                             //  to a fixed reference frame.  The yaw of this
+                             //  reference frame is arbitrary, determined by
+                             //  the IMU.  However, X-Y plane of the reference
+                             //  frame is perpendicular to gravity, and +Z
+                             //  points up.
+
+    boolean has_heading;     // True if this IMU knows the value of heading.
+    double heading;          // The angle (in radians) between the x-axis of
+                             //  the IMU's earth-fixed reference frame and true
+                             //  east.  This is NOT the heading of the IMU
+                             //  body frame.  If "has_heading" is false, this
+                             //  value is undefined.
+
+    int32_t imu_serial_number; // Unique identifier of this IMU
+}

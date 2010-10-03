@@ -1,0 +1,36 @@
+package navlcm;
+
+struct features_param_t
+{
+    byte code;
+    boolean enabled;
+
+    byte    sift_doubleimsize; // sift parameters
+    int32_t sift_nscales;
+    double  sift_sigma;
+    double  sift_peakthresh;
+
+    double  gftt_quality; // gftt parameters
+    double  gftt_min_dist;
+    int32_t gftt_block_size;
+    boolean gftt_use_harris;
+    double  gftt_harris_param;
+
+    int32_t surf_octaves; // surf parameters
+    int32_t surf_intervals;
+    int32_t surf_init_sample;
+    double  surf_thresh;
+
+    int32_t fast_thresh; // fast parameters
+
+    double  scale_factor;
+    int32_t feature_type;
+
+    const int32_t SIFT = 0;
+    const int32_t SIFT2 = 1;
+    const int32_t SURF64 = 2;
+    const int32_t SURF128 = 3;
+    const int32_t FAST = 4;
+    const int32_t GFTT = 5;
+    
+}

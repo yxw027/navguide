@@ -1,0 +1,7 @@
+DRIVERS=="ftdi_sio", RUN+="/etc/udev/scripts/set_ftdi_low_latency.sh"
+SYSFS{manufacturer}=="Xsens", KERNEL=="ttyUSB*", SYMLINK+="xsens"
+SYSFS{product}=="Orcboard", KERNEL=="ttyUSB*", SYMLINK+="orc"
+SYSFS{serial}=="FTCY3BK8", KERNEL=="ttyUSB*", SYMLINK+="sick"
+SYSFS{serial}=="0080F837", SUBSYSTEM=="usb", GROUP="disk"
+
+

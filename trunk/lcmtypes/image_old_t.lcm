@@ -1,0 +1,24 @@
+package navlcm;
+
+struct image_old_t
+{
+    // microseconds since the epoch
+    int64_t  utime;
+
+    int16_t  width;
+    int16_t  height;
+    int16_t  stride;
+
+    int32_t  pixelformat;
+
+    int32_t  size;
+    byte     image[size];
+
+//    int32_t sensorid;
+
+    // metadata dictionary
+  //  int32_t nb;
+  //  key_byte_t metadata_byte[nb];
+
+
+}

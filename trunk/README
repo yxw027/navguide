@@ -1,0 +1,173 @@
+Navguide -- Body-Relative Navigation using Uncalibrated Cameras
+
+Author: Olivier Koch, koch@csail.mit.edu
+
+Build dependencies
+==================
+
+    autoconf
+    automake
+    gtk-doc-tools
+    subversion
+    cvs
+    Glade	(glade-3)
+
+    g++
+    GLib        (libglib1.2-dev)
+    libjpeg     (libjpeg62-dev)    
+    Gtk 2.0	(libgtk2.0-dev)
+    Glut        (libglut3-dev)
+    OpenGL	(libgl1-mesa-dev)
+    libraw1394	(libraw1394-dev)
+    libdc1394	(on sourceforge)
+    GSL		(libgsl0-dev)
+
+    camunits         (http://camunits.googlecode.com)
+    lcm            (http://lcm.googlecode.com)
+
+    Intel IPP
+    Intel MKL (Math Kernel Library)
+    Intel Compiler
+
+    Python Dev (python-dev)
+    Python Imaging Library   (debian: python-imaging)
+    Python Bluetooth (sudo apt-get install python-bluetooth)
+    OpenCV (libcv1 libcv-dev libcvaux-dev opencv-doc)
+    [optional] libgtkglext1-dev (GTK+ OpenGL extension)
+    [optional] python-gtkglext1 (Python bindings for gtkglext)
+    [optional] pyopengl (Python OpenGL)
+    
+    Java	(sun-java-6-jdk)
+    ALSA	(libasound2-dev)
+    Graphviz    (graphviz-dev)
+    openssh-server
+    sysstat
+    lm-sensors
+    manpages-dev 
+    glibc-doc
+
+    gfortran        (for math benchmark)
+    libatlas-dev    (for math benchmark)
+    festival
+    beep
+
+Links
+==================
+
+Project webpage: http://rvsn.csail.mit.edu/navguide
+
+Installation
+==================
+
+* Install third-party libraries
+* [optional] Type 'sudo update-alternatives --config java'
+* [optional] Type 'sudo ldconfig' to update links
+* [optional] Add the raw1394 and dc1394 modules using 'sudo modprobe'
+* Type 'make' in the navguide/src/ directory
+* Add export NAVGUIDE_DBG=all to your ~/.bashrc file
+* Add export LCM_DEFAULT_URL="udpm://?ttl=1" to the ~/.bashrc file
+* Add export NAVGUIDE_CONFIG_PATH= <full path to navguide/config>
+
+* Edit /etc/sysctl.conf, add the following lines to it and type sysctl -p /etc/sysctl.conf:
+net.core.rmem_max = 2097152
+net.core.wmem_max = 2097152
+net.core.rmem_default = 2097152
+net.core.wmem_default = 2097152
+* Add user to disk group: adduser <username> disk
+* [optional] On slave PCs, add the slave_boot.sh script to the startup list (System > Preferences > Sessions) (which creates a new file in .config/autostart)
+* [optional] Setup the power button to power off the system directly instead of asking the user : System -> Preferences -> Power Management
+* [optional] Disable fsck in /etc/fstab
+* [optional] Enable booting with no keyboard in the BIOS
+* [optional] Enable yourself to run shutdown without root password. Type 'sudo visudo' and add the following line at the end:
+<username> ALL = NOPASSWD: /sbin/shutdown
+
+LAN setup (for multi-pc environment)
+====================================
+* Connect all PCs to the switch
+* Connect one of the machines to the internet (wire)
+* On the client machines, edit the /etc/network/interfaces:
+auto eth0
+iface eth0 inet static
+address 192.168.2.xx  (xx=11,12,13..)
+netmask 255.255.255.0
+broadcast 192.168.2.255
+gateway 192.168.2.11 # local IP address of the gateway
+
+* On the gateway machine, edit the /etc/network/interfaces:
+iface eth0 inet static
+address 192.168.2.11
+netmask 255.255.255.0
+broadcast 192.168.2.255
+auto eth0
+
+* On the gateway machine, edit /etc/sysctl.conf and set ip_forward to 1.
+  Install dnsmasq and ipmasq. Restart dnsmasq (/etc/init.d/dnsmasq restart)
+  and setup ipmasq to start after network has been started (dpkg-reconfigure ipmasq).
+  Add the bin/lan_setup.sh script to boot sequence: as root, copy lan_setup.sh to /etc/init.d and type 'update-rc.d lan_setup.sh defaults 99'.
+
+ssh with no password
+======================
+* on machine A, type: ssh-keygen -t dsa -f $HOME/.ssh/id_dsa -P ''
+* copy $HOME/.ssh/id_dsa.pub to machine B
+* on machine B, type: cat id_dsa.pub >> $HOME/.ssh/authorized_keys
+
+Temperature Monitoring
+======================
+* Install lm-sensors (apt-get)
+* Run sensors-detect as root (answer YES to all questions)
+* Reboot
+* Run "sensors" to check
+
+Setting up Emacs
+================
+
+* sudo apt-get install emacs
+* Copy .emacs file to home directory
+* Google 'emacs swbuff' and download swbuff.el
+* Copy swbuff.el to /usr/local/share/emacs/22.1/site-lip
+* Unzip it; byte compile it by opening emacs and typing M-x byte-compile-file
+
+* Allow Bluetooth on Tablet PC: hcitool hci0 piscan
+
+PDA Installation (Nokia 810)
+============================
+
+* Follow the instructions in navguide/tabletpc/README
+
+Misc
+==================
+
+* LCM requires an active network interface to work. If you do not have one, run the bin/lcm_setup.sh script before starting the system.
+
+License
+==================
+Please see the LICENSE file.
+
+Mounting NFS volume
+==================
+Add this line to /etc/fstab:
+gir.csail.mit.edu:/export/dgc /mnt/tig-storage nfs  rw,hard,intr    0 0
+
+======= Network Setup ==============================
+
+It is often useful to assign a fixed IP address to the computer installed on the backpack
+and disable the default network manager. This way, you can seamlessly plug/unplug the 
+network cable from the backpack.
+
+To do so, uninstall the network manager (sudo apt purge network-manager network-manager-gnome)
+and copy-paste the following in /etc/network/interfaces:
+
+and auto lo
+iface lo inet loopback
+
+auto eth0
+iface eth0 inet static
+address 128.30.24.199
+gateway 128.30.24.1
+netmask 255.255.254.0
+dns-nameservers 128.30.2.23 128.30.2.24 128.30.2.25 128.30.0.125
+
+Upon reboot, type: sudo /etc/init.d/networking restart
+
+
+
