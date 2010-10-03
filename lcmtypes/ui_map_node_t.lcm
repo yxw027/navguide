@@ -1,0 +1,11 @@
+package navlcm;
+
+struct ui_map_node_t
+{
+    int32_t id;
+    string label;
+    
+    double x; // x,y position for display (range [0,1])
+    double y;
+    int64_t utime;
+}

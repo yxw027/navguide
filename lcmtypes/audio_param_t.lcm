@@ -1,0 +1,8 @@
+package navlcm;
+
+struct audio_param_t
+{
+    int32_t code;
+    double val;
+    string name;
+}

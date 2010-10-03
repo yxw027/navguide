@@ -1,0 +1,27 @@
+this directory contains programs and support utilities for Nokia Series 60
+cellular phones.  Specifically, it contains the Python for Series 60
+distribution, which must be installed on a phone in order for any of the
+programs to work properly.
+
+Installing Python
+=================
+
+The directory PythonForS60 contains the actual Python distribution and
+installation instructions.
+
+SyncAndRun
+==========
+
+This is a development tool for streamlining the process of editing a python
+script, uploading it to the phone, and testing it.  A client needs to be
+installed on the phone.
+
+Upload syncandrun.py to the python directory on the phone
+
+  $ obexftp -b <btaddr> -c "c:\\python" -p syncandrun.py
+
+sar.conf is a configuration file that specifies the local files to upload to
+the phone during a development cycle.
+
+syncandrund.py is the SyncAndRun daemon that is to be run on a host machine
+(i.e. Windows or Linux computer)

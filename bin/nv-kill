@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# kill all local applications
+kill  `ps x |  grep nv-grabber | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-guidance | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-features | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep phoned | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-collector | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-audio | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-monitor | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-xsens | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-dead_reckon | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+kill  `ps x |  grep nv-logger | grep -v grep | grep -v xterm | grep -v ssh | grep -v emacs | cut -c1-6`
+

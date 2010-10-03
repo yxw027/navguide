@@ -1,0 +1,4 @@
+requires:
+    camunits (svn:171 or newer)
+    camunits-ipp
+    lcm

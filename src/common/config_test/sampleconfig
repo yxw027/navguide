@@ -1,0 +1,23 @@
+# blah
+
+sick {
+    q = 1.0;
+    d = [ 1.0, 2.0 ];
+    a = (ignored) [ abc, def ];
+    b = [ "foo bar",
+          "baz", ];
+    front {
+    }
+    rear {
+       q = 0.5;
+    }
+    scans = 180;
+}
+xsens {
+    calibrate_at_start = true;
+}
+controller {
+    P = 1.0;
+    I = 1.0;
+    D = 1.0;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<chain>
+    <unit id="input.dc1394:b09d01008b5108" width="376" height="240" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="376x240 Gray 8bpp (F7-1)">
+        <control id="packet-size">800</control>
+        <control id="brightness-mode">1</control>
+        <control id="brightness">144</control>
+        <control id="exposure-mode">1</control>
+        <control id="exposure">57</control>
+        <control id="gamma-mode">0</control>
+        <control id="gamma">0</control>
+        <control id="shutter-mode">1</control>
+        <control id="shutter">0.0504687</control>
+        <control id="gain-mode">1</control>
+        <control id="gain">2.7663</control>
+        <control id="trigger">0</control>
+        <control id="trigger-polarity">0</control>
+        <control id="trigger-source">0</control>
+        <control id="trigger-now">1</control>
+        <control id="trigger-delay-mode">0</control>
+        <control id="trigger-delay">0</control>
+        <control id="frame-rate-mode">2</control>
+        <control id="frame-rate">9.88862</control>
+    </unit>
+    <unit id="ipp.resize" width="188" height="120" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="188x120 Gray 8bpp">
+        <control id="lock-aspect">1</control>
+        <control id="width">188</control>
+        <control id="height">120</control>
+    </unit>
+    <unit id="lcm.image_publish" width="188" height="120" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="188x120 Gray 8bpp">
+        <control id="publish">1</control>
+        <control id="channel">CAM_THUMB_RR</control>
+        <control id="lcm-url"></control>
+        <control id="data-rate">0.213 MB/s</control>
+    </unit>
+</chain>

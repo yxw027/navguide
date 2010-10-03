@@ -1,0 +1,8 @@
+package navlcm;
+
+struct s60_key_event_t {
+    int32_t modifiers;
+    int32_t type;
+    int32_t keycode;
+    int32_t scancode;
+}

@@ -1,0 +1,8 @@
+package navlcm;
+
+struct track_set_t
+{ 
+    int32_t num;
+    track_t el[num];
+    int64_t maxuid;   // maximum uid of tracks
+}

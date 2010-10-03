@@ -1,0 +1,16 @@
+DARPA Grand Challenge RNDF parser
+=================================
+
+To compile, type 'make'.
+
+Included programs:
+  test-parse filename_RNDF.txt filename_MDF.txt
+  
+    Parses an RNDF and outputs a summary of its contents
+
+  gen-google-map filename.txt
+  
+    Parses an RNDF and outputs a javascript file that can be included
+    within an HTML page together with the Google Maps API to produce a map
+    overlay that shows the contents of the RNDF.
+

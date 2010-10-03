@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<chain>
+    <unit id="input.dc1394:b09d01008b50de" width="376" height="240" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="376x240 Gray 8bpp (F7-1)">
+        <control id="packet-size">800</control>
+        <control id="brightness-mode">1</control>
+        <control id="brightness">140</control>
+        <control id="exposure-mode">1</control>
+        <control id="exposure">57</control>
+        <control id="white-balance-mode">2</control>
+        <control id="white-balance-red">512</control>
+        <control id="white-balance-blue">512</control>
+        <control id="gamma-mode">0</control>
+        <control id="gamma">0</control>
+        <control id="shutter-mode">1</control>
+        <control id="shutter">0.00818747</control>
+        <control id="gain-mode">1</control>
+        <control id="gain">12.0412</control>
+        <control id="trigger">0</control>
+        <control id="trigger-polarity">0</control>
+        <control id="trigger-source">0</control>
+        <control id="trigger-now">1</control>
+        <control id="trigger-delay-mode">0</control>
+        <control id="trigger-delay">0</control>
+        <control id="frame-rate-mode">2</control>
+        <control id="frame-rate">9.88862</control>
+        <control id="pan-mode">1</control>
+        <control id="pan">56</control>
+    </unit>
+    <unit id="util.throttle" width="376" height="240" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="376x240 Gray 8bpp (F7-1)">
+        <control id="pause">0</control>
+        <control id="repeat">0</control>
+        <control id="throttle-mode">2</control>
+        <control id="throttle-rate">5</control>
+    </unit>
+    <unit id="lcm.image_publish" width="376" height="240" pixelformat="CAM_PIXEL_FORMAT_GRAY" format_name="376x240 Gray 8bpp (F7-1)">
+        <control id="publish">1</control>
+        <control id="channel">CAM_THUMB_FL</control>
+        <control id="lcm-url"></control>
+        <control id="data-rate">0.438 MB/s</control>
+    </unit>
+</chain>

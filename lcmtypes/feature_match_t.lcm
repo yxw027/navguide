@@ -1,0 +1,11 @@
+package navlcm;
+
+struct feature_match_t
+{
+    int32_t num;
+
+    feature_t src;
+    feature_t dst[num];
+
+    double dist[num];
+}

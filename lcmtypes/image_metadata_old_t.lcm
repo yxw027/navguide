@@ -1,0 +1,7 @@
+package navlcm;
+
+struct image_metadata_old_t {
+    string key;
+    int32_t n;
+    byte value[n];
+}

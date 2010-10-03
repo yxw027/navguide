@@ -1,0 +1,5 @@
+package navlcm;
+
+struct phone_print_t {
+    string text;
+}

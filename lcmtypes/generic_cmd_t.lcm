@@ -1,0 +1,7 @@
+package navlcm;
+
+struct generic_cmd_t
+{
+    int32_t code;
+    string text;
+}

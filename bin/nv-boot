@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+home=$HOME"/navguide";
+
+# run programs
+echo "starting navguide...";
+
+dc1394_reset_bus
+
+sleep 1
+
+# utils
+python $home/python/phoned.py &
+nv-audio &
+nv-monitor &
+nv-logger &
+
+# detection
+nv-features --sensor-id 0 &
+nv-features --sensor-id 1 &
+nv-features --sensor-id 2 &
+nv-features --sensor-id 3 &
+nv-collector &
+
+# grabber
+sleep 1; nv-grabber -a --xml /home/koch/navguide/config/camunits/cam_0.xml &
+sleep 2; nv-grabber -a --xml /home/koch/navguide/config/camunits/cam_1.xml &
+sleep 3; nv-grabber -a --xml /home/koch/navguide/config/camunits/cam_2.xml &
+sleep 4; nv-grabber -a --xml /home/koch/navguide/config/camunits/cam_3.xml &
+
+# guidance
+#nv-guidance -m 1 &
+
+
+# utils
+#xterm -hold -T "phoned" -e /bin/bash -l -c  "python $home/python/phoned.py" &
+#xterm -hold -T "nv-audio" -e /bin/bash -l -c  "nv-audio" &
+#xterm -hold -T "nv-monitor" -e /bin/bash -l -c  "nv-monitor" &
+#
+## detection
+#xterm -hold -T "nv-features 0" -e /bin/bash -l -c "nv-features --sensor-id 0" &
+#xterm -hold -T "nv-features 1" -e /bin/bash -l -c "nv-features --sensor-id 1" &
+#xterm -hold -T "nv-features 2" -e /bin/bash -l -c "nv-features --sensor-id 2" &
+#xterm -hold -T "nv-features 3" -e /bin/bash -l -c "nv-features --sensor-id 3" &
+#xterm -hold -T "nv-collector" -e /bin/bash -l -c  "nv-collector" &
+#
+## grabber
+#xterm -hold -T "nv-grabber 0" -e /bin/bash -l -c "nv-grabber --xml /home/koch/navguide/config/camunits/cam_0.xml" &
+#xterm -hold -T "nv-grabber 1" -e /bin/bash -l -c "nv-grabber --xml /home/koch/navguide/config/camunits/cam_1.xml" &
+#xterm -hold -T "nv-grabber 2" -e /bin/bash -l -c "nv-grabber --xml /home/koch/navguide/config/camunits/cam_2.xml" &
+#xterm -hold -T "nv-grabber 3" -e /bin/bash -l -c "nv-grabber --xml /home/koch/navguide/config/camunits/cam_3.xml" &
+#
+## guidance
+#xterm -hold -T "nv-guidance" -e /bin/bash -l -c  "nv-guidance" &
+#

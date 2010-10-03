@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=VsGuide
+Comment=VsGuide Terminal 
+Exec=/usr/bin/python2.5 /home/user/vsguidetablet/vsguidetablet.py
+Icon=vsguidetablet_26x26
+Terminal=false
+Type=Application
+Categories=System;TerminalEmulator;
+X-HildonDesk-ShowInToolbar=true

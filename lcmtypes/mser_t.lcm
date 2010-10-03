@@ -1,0 +1,9 @@
+package navlcm;
+
+struct mser_t
+{
+    double x0, y0;    
+    double s11, s12, s22;
+    int32_t area;
+    int32_t fill[area];
+}

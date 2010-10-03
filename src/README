@@ -1,0 +1,42 @@
+** Active directories:
+
+angeli/     source code from Adrien Angeli's PhD thesis (do not distribute)
+audio/      sound record/replay
+classifier/ local node estimation, rotation guidance and loop closing
+collector/  gather data from all cameras to synchronize LCM publication
+common/     utilities
+dead-reckon/    dead-reckoning from IMU
+fabmap/     source code from Mark Cummins's PhD thesis (do not distribute)
+features/   feature detection (sift, mser, good features to track, etc.)
+grabber/    image grabbing from cameras
+gtk_util/   gtk utils
+image/      image utils
+jpegcodec/  jpeg, ppm, pgm, png codecs
+lcmtypes/   automatically-generated code for LCM types (do not modify)
+libfast/    FAST feature detection
+libmser/    MSER feature detection
+libsift/    David Lowe's SIFT source code (do not distribute)
+libsift2/    sift++ source code
+libsurf/    Open SURF
+libtrack/   feature matching
+logger/     LCM logger/logplayer
+model/      3D model utilities
+monitor/    activity monitoring (LCM sanity check, temperature, cpu, etc.)
+phone_ui_ex/    example code for Series 60 phones
+viewer/     viewer
+xsens/      IMU API
+
+
+** Deprecated directories
+
+bags/
+datamagr/
+ipp_flow/
+libmatch/
+libpmk-1.5/ source code from the libpmk project
+old/
+simcam/
+tick/
+timesync/
+vl-1.3.2/
+

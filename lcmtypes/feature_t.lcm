@@ -1,0 +1,16 @@
+package navlcm;
+
+struct feature_t
+{
+    double  scale;
+    double  col;
+    double  row;
+    double ori;
+    int32_t size;
+    float data[size];
+    byte sensorid;
+    int32_t index;
+    int64_t utime;
+    int32_t uid;
+    byte laplacian;
+}

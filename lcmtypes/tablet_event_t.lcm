@@ -1,0 +1,5 @@
+package navlcm;
+
+struct tablet_event_t {
+    int32_t code;
+}

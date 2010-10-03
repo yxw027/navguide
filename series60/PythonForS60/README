@@ -1,0 +1,16 @@
+This directory contains Python For Series 60.
+
+To install, upload the .SIS files to a Series60 3rd Edition cell phone (must be
+3rd edition!)
+
+on an ubuntu machine with Bluetooth:
+
+  // install the obexftp package
+  $ sudo apt-get install obexftp
+
+  // find the Bluetooth address of your cell phone
+  $ hcitool scan --flush
+
+  // upload files.  replace '00:00:00:00:00:00' with Bluetooth addr of phone
+  $ obexftp -b 00:00:00:00:00 -p PythonForS60_1_4_1_3rdEd.SIS
+  $ obexftp -b 00:00:00:00:00 -p PythonScriptShell_1_4_1_3rdEd.SIS

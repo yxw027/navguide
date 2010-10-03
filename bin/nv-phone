@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+home=$HOME"/navguide";
+
+# utils
+python $home/python/phoned.py &

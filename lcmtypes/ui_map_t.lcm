@@ -1,0 +1,10 @@
+package navlcm;
+
+struct ui_map_t
+{
+    int32_t n_nodes;
+    int32_t n_edges;
+
+    ui_map_node_t nodes[n_nodes];
+    ui_map_edge_t edges[n_edges];
+}
